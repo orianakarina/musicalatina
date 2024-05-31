@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reproductor Multimedia</title>
+	
+	<style>
+	 body {
+            margin: 0;
+            padding: 0;
+            background-color: #e6e6fa; /* Fondo violeta claro */
+            font-family: Arial, sans-serif;
+        }
+@keyframes bubble-animation {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px); /* Cambia la distancia vertical del movimiento */
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.bubbles-container {
+  position: relative;
+  width: 100%;
+  height: 10vh; /* Altura completa de la pantalla */
+  overflow: hidden;
+}
+
+.bubble {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.5); /* Color blanco con transparencia */
+  border-radius: 50%; /* Forma de círculo */
+  animation: bubble-animation 3s ease-in-out infinite; /* Cambia la duración y el tiempo de la animación según sea necesario */
+}
+
+/* Estilos para cada burbuja */
+.bubble:nth-child(1) {
+  width: 200px;
+  height: 200px;
+  top: 10%;
+  left: 8%;
+}
+
+
+.bubble:nth-child(3){
+  width: 200px;
+  height: 200px;
+  top: 70%;
+  left: 24%;
+}
+
+
+
+.rectangle1 {
+            position: absolute;
+            top: 3px; /* Ajusta la posición vertical */
+            right: 20px; /* Ajusta la posición horizontal */
+            width:200px;
+            height: 90px;
+            background-color: #f0f0f0; /* Color de fondo del rectángulo */
+            border: 2px solid #FFF; /* Borde del rectángulo */
+            border-radius: 70px; /* Borde redondeado */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 18px; /* Tamaño del texto */
+            font-family: Arial, sans-serif; /* Fuente del texto */
+            color: blueviolet; /* Color del texto */
+        }		
+		
+		
+		
+.rectangle2 {
+            position: absolute;
+            top: 90px; /* Ajusta la posición vertical */
+            right: 20px; /* Ajusta la posición horizontal */
+            width: 200px;
+            height: 90px;
+            background-color: #f0f0f0; /* Color de fondo del rectángulo */
+            border: 2px solid #FFF; /* Borde del rectángulo */
+            border-radius: 70px; /* Borde redondeado */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 18px; /* Tamaño del texto */
+            font-family: Arial, sans-serif; /* Fuente del texto */
+            color: blueviolet; /* Color del texto */
+        }		
+		
+		.rectangle3 {
+            position: absolute;
+            top: 3px; /* Ajusta la posición vertical */
+            left: 20px; /* Ajusta la posición horizontal */
+            width: 200px;
+            height: 90px;
+            background-color: #f0f0f0; /* Color de fondo del rectángulo */
+            border: 2px solid #FFF; /* Borde del rectángulo */
+            border-radius: 70px; /* Borde redondeado */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 18px; /* Tamaño del texto */
+            font-family: Arial, sans-serif; /* Fuente del texto */
+            color: blueviolet; /* Color del texto */
+        }		
+		
+        .rectangle4 {
+            position: absolute;
+            top: 90px; /* Ajusta la posición vertical */
+            left: 20px; /* Ajusta la posición horizontal */
+            width: 200px;
+            height: 90px;
+            background-color: #f0f0f0; /* Color de fondo del rectángulo */
+            border: 2px solid #FFF; /* Borde del rectángulo */
+            border-radius: 70px; /* Borde redondeado */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 18px; /* Tamaño del texto */
+            font-family: Arial, sans-serif; /* Fuente del texto */
+            color: blueviolet; /* Color del texto */
+        }
+	
+.banner {
+            width: 100%;
+            height: 200px; /* Altura del banner */
+            background: linear-gradient(90deg, #ff80bf, #fffdd0, #dda0dd);
+            background-size: 400% 400%;
+            animation: gradient 10s ease infinite;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+		
+		
+		   @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+		
+		 h1 {
+            text-align: justify;
+            color: blueviolet;
+			font-size: 50px;
+        }
+		h2 {
+            
+            color: blueviolet;
+			font-size: 24px;
+        }
+	.video-container1 {
+    display: inline-block;
+    margin-right: 2px; /* Ajusta el espacio entre los videos */
+    margin-left: 10px;
+}
+
+.video-container2 {
+    display: inline-block;
+    margin-right: 2; /* Ajusta el espacio entre los videos */
+    margin-left: -130px;
+}
+
+.video-container3 {
+    display: inline-block;
+    margin-right: 2px; /* Ajusta el espacio entre los videos */
+    margin-left: 10px;
+}
+
+		.video-container4 {
+    display: inline-block;
+    margin-right: 2px; /* Ajusta el espacio entre los videos */
+    margin-left: 10px;
+			position:relative;
+			overflow: hidden;
+			display: inline-block;
+			transition: transform 0.3s ease;
+}
+		
+		
+		
+			.video-container5 {
+    display: inline-block;
+    margin-right: 2px; /* Ajusta el espacio entre los videos */
+    margin-left: 10px;
+			position:relative;
+			overflow: hidden;
+			display: inline-block;
+			transition: transform 0.3s ease;
+}
+		
+		    .audio-container {
+            display: flex;
+            justify-content: space-around; /* Distribuye los elementos uniformemente */
+            align-items: center;
+            margin: 20px 0;
+        }
+        .audio-item {
+            text-align: center;
+            margin: 0 10px; /* Espacio entre los elementos */
+        }
+		.video-NUEVO {
+    display: flex;
+    justify-content: space-around; /* Distribuye los elementos uniformemente */
+    align-items: center;
+    margin: 20px 0;
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en varias líneas si es necesario */
+}
+
+.video-item {
+    text-align: center;
+    margin: 10px; /* Espacio entre los elementos */
+    flex: 1; /* Permite que los elementos crezcan y se distribuyan equitativamente */
+    min-width: 300px; /* Asegura que los elementos no sean más pequeños que el ancho del video */
+}
+
+		
+		.paragraph-box {
+            position: fixed;
+            bottom: 2px; /* Ajusta la posición vertical */
+            right: 20px; /* Ajusta la posición horizontal */
+            width: 300px;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco semitransparente */
+            border: 2px solid #000; /* Borde negro */
+            border-radius: 10px; /* Bordes redondeados */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
+            font-family: Arial, sans-serif;
+            color: #333; /* Color del texto */
+        }
+		
+		
+		
+	.contact-columns {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .contact-column {
+            width: 48%; /* Ajusta según sea necesario */
+            padding: 10px;
+        }
+		
+		
+		.container {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .map {
+            flex: 1;
+            margin-right: 20px;
+        }
+        .contact-columns {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .contact-column {
+            margin-bottom: 10px;
+        }
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</style>
+	
+</head>
+	
+<body>
+<div class="container">
+        <div class="rectangle1">
+            EXITOS MUSICALES
+        </div>
+	<div class="rectangle2">
+            LEYENDAS 
+        </div>
+	 <div class="rectangle3">
+            MEJORES DJ'S
+        </div>
+        <div class="rectangle4">
+           LETRAS
+        </div>
+    </div>
+	<div class="banner">
+        <h1>REPRODUCTOR MULTIMEDIA</h1>
+    </div>
+   	<div class="bubbles-container">
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+	<div class="bubble"></div>
+		<div class="bubble"></div>
+		<div class="bubble"></div>
+	<div class="bubble"></div>
+		<div class="bubble"></div>
+
+</div>
+<div class="video-container1">
+    <h2> Canciones que nunca pasan de moda</h2>
+    <video controls width="300" height="150" poster= bu.png>
+        <source src="oki.mp4" type="video/mp4"/>
+        <source src="rabbit320.webm" type="video/webm" /> /*poner*/
+        Tu navegador no soporta el elemento de video.
+    </video>
+</div>
+
+<div class="video-container2">
+    <h2> </h2>
+    <video controls width="300" height="150" poster= mich.png>
+        <source src="michi.mp4" type="video/mp4"/>
+        <source src="rabbit320.webm" type="video/webm" /> /*poner*/
+        Tu navegador no soporta el elemento de video.
+    </video>
+</div>
+	
+
+	<div class="video-container3">
+    <h2> </h2>
+    <video controls width="300" height="150" poster= pedro.jpeg>
+        <source src="rafaela.mp4" type="video/mp4"/>
+        <source src="rabbit320.webm" type="video/webm" /> /*poner*/
+        Tu navegador no soporta el elemento de video.
+    </video>
+</div>
+	
+	
+	
+	
+	
+	<div class="video-container4">
+    <h2> </h2>
+    <video controls width="300" height="150" poster= asoka.png>
+        <source src="asoki.mp4" type="video/mp4"/>
+        <source src="rabbit320.webm" type="video/webm" /> /*poner*/
+        Tu navegador no soporta el elemento de video.
+    </video>
+</div>
+
+<div class="video-NUEVO">
+        <div class="video-item">
+            <h2><p>MASHA</p></h2>
+            <iframe width="300" height="315" src="https://www.youtube.com/embed/UA3U56Q0hHA?si=VBcPNCETY9TLjto8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <div class="video-item">
+            <h2><p>KEITH MAcKENZIE</h2>
+            <iframe width="300" height="315" src="https://www.youtube.com/embed/jsKBKvxUHbw?si=1WiHHkaJKaGHRftm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <div class="video-item">
+            <h2><p>KAREN MENDEZ</p></h2>
+     <iframe width="300" height="315" src="https://www.youtube.com/embed/qc-enP4bupg?si=N10oVsYkd0RxjGRY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <div class="video-item">
+            <h2><p>AIR MAGNO</p></h2>
+            <iframe width="300" height="315" src="https://www.youtube.com/embed/Vb8sxjj7t0k?si=HQah8rdmfo2gt_jF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+    </div>
+ 
+	<div class="audio-container">
+        <div class="audio-item">
+            <h2>VIRAL TIK TOK</h2>
+            <audio controls>
+                <source src="love.mp3" type="audio/mp3" />
+                <source src="love.ogg" type="audio/ogg" />
+                Tu navegador no soporta el elemento de audio.
+            </audio>
+        </div>
+
+		
+        <div class="audio-item">
+            <h2>VIRAL TIK TOK</h2>
+            <audio controls>
+                <source src="belinda.MP3" type="audio/mp3" />
+                <source src="love.ogg" type="audio/ogg" />
+                Tu navegador no soporta el elemento de audio.
+            </audio>
+        </div>
+		
+		
+		
+		
+        <div class="audio-item">
+            <h2>VIRAL TIK TOK</h2>
+            <audio controls>
+                <source src="Buscando%20Money.mp3" type="audio/mp3" />
+                <source src="love.ogg" type="audio/ogg" />
+                Tu navegador no soporta el elemento de audio.
+            </audio>
+        </div>
+		
+		
+		
+		 <div class="audio-item">
+            <h2>VIRAL TIK TOK</h2>
+            <audio controls>
+                <source src="Buscando%20Money.mp3" type="audio/mp3" />
+                <source src="love.ogg" type="audio/ogg" />
+                Tu navegador no soporta el elemento de audio.
+            </audio>
+        </div>
+
+    </div>
+
+
+<div class="container">
+        <div class="map">
+            <h2>Revisa esta direcciòn</h2>
+          <embed src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.04352539901!2d-58.39960482401935!3d-34.60306087295449!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca9538082e3d%3A0x142eead7a17039f3!2sISEC!5e0!3m2!1ses-419!2sit!4v1717003908095!5m2!1ses-419!2sit" width="300" height="300" style="border:0;" allowfullscreen="" loading="lazy" /embed>
+        </div>
+
+        <div class="contact-columns">
+            <div class="contact-column">
+                <h3>Contactos</h3>
+                <p>@repertoriolatino</p>
+                <p>www.repertoriolatino.com</p>
+            </div>
+            <div class="contact-column">
+                <h3>Redes Sociales</h3>
+                <p>TikTok: repertoriolatino</p>
+                <p>YouTube: repertoriolatino</p>
+            </div>
+        </div>
+    </div>
+
+	
+	  <div class="paragraph-box">
+        <p>Descubre todas las tendencias musicales, artistas del momento y géneros que están dominando las listas. Mantente al día con las últimas novedades en @repertoriolatino</p>
+    </div>
+
+	
+</body>
+</html>
